@@ -53,11 +53,12 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
+        context: .
         push: true
         platforms: linux/amd64
         tags: ccr.ccs.tencentyun.com/docschina/rollup-docs-cn:${{ env.BRANCH_NAME }}-${{ env.TIMESTAMP }}
-        secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.CHECKOUT_REPO_TOKEN }}
+        # secrets: |
+        #     GIT_AUTH_TOKEN=${{ secrets.CHECKOUT_REPO_TOKEN }}
 
     # - name: Deployment
     #   uses: TencentCloud/cli-action@v1
