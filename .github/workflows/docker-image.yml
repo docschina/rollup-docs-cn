@@ -58,14 +58,12 @@ jobs:
         push: true
         platforms: linux/amd64
         tags: ccr.ccs.tencentyun.com/docschina/rollup-docs-cn:${{ env.BRANCH_NAME }}-${{ env.TIMESTAMP }}
-        # secrets: |
-        #     GIT_AUTH_TOKEN=${{ secrets.CHECKOUT_REPO_TOKEN }}
 
-    # - name: Deployment
-    #   uses: TencentCloud/cli-action@v1
-    #   with:
-    #     secret_id: ${{ secrets.SECRET_ID }}
-    #     secret_key: ${{ secrets.SECRET_KEY }}
-    #     region: ${{ secrets.LIGHTHOUSE_REGION }}
-    #     commands: tat InvokeCommand --cli-unfold-argument --region ap-shanghai --CommandId cmd-boc4aaiw --InstanceIds lhins-nkwfootc --Parameters '{"deployment":"rollup","image":"ccr.ccs.tencentyun.com/docschina/rollup-docs-cn:${{ env.BRANCH_NAME }}-${{ env.TIMESTAMP }}"}'
-    #     output_format: json
+    - name: Deployment
+      uses: TencentCloud/cli-action@v1
+      with:
+        secret_id: ${{ secrets.SECRET_ID }}
+        secret_key: ${{ secrets.SECRET_KEY }}
+        region: ${{ secrets.LIGHTHOUSE_REGION }}
+        commands: tat InvokeCommand --cli-unfold-argument --region ap-shanghai --CommandId cmd-boc4aaiw --InstanceIds lhins-nkwfootc --Parameters '{"deployment":"rollup","image":"ccr.ccs.tencentyun.com/docschina/rollup-docs-cn:${{ env.BRANCH_NAME }}-${{ env.TIMESTAMP }}"}'
+        output_format: json
