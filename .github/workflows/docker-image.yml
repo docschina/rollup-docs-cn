@@ -39,7 +39,7 @@ jobs:
       
 
     - name: Build docs
-      run: cat ./Dockerfile && cat ./default.conf && npm i && npm run build:docs
+      run: npm i && npm run build:docs
 
     - name: Docker build
       uses: docker/setup-buildx-action@v3
