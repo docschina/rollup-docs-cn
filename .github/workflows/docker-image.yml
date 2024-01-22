@@ -36,9 +36,10 @@ jobs:
       with:
           url: https://raw.githubusercontent.com/lcxfs1991/docschina-deployment/main/rollup/Dockerfile
           target-path: .
+      
 
     - name: Build docs
-      run: npm i && npm run build:docs
+      run: cat ./Dockerfile && cat ./default.conf && npm i && npm run build:docs
 
     - name: Docker build
       uses: docker/setup-buildx-action@v3
