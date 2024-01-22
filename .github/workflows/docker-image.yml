@@ -26,13 +26,13 @@ jobs:
       run: echo "TIMESTAMP=$(date +%s%3N)" >> $GITHUB_ENV
 
     - name: Fetch default.conf
-    - uses: valitydev/action-download-file@v1
+      uses: valitydev/action-download-file@v1
       with:
           url: https://raw.githubusercontent.com/lcxfs1991/docschina-deployment/main/rollup/default.conf
           target-path: .
 
     - name: Fetch Dockerfile
-    - uses: valitydev/action-download-file@v1
+      uses: valitydev/action-download-file@v1
       with:
           url: https://raw.githubusercontent.com/lcxfs1991/docschina-deployment/main/rollup/Dockerfile
           target-path: .
