@@ -503,7 +503,7 @@ npm run build -- --environment BUILD:development
 
 一旦构建完成，如果出现任何警告，则以错误退出构建。
 
-### `--filterLogs <filter>`{#filterlogs-filter}
+### `--filterLogs <filter>` {#filterlogs-filter}
 
 根据自定义的过滤器可以仅展示特定的日志。一个过滤器最基本的形式是一个 `key:value` 键值对，其中键是日志对象的属性，而值是允许的值。例如：
 
